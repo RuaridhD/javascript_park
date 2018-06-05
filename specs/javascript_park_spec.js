@@ -3,12 +3,18 @@
 // should be able to remove all dinosaurs of a particular type
 // should get all the dinosaurs with an offspring count of more than 2
 
-// const assert = require('assert');
-//
-// const Dinosaur = require('../dinosaur.js');
-// const Park = require('../javascript_park.js');
-//
-// beforeEach(function(){
-//     dinosaur = new Dinosaur();
-//     park = new Park();
-//   })
+const assert = require('assert');
+
+const Dinosaur = require('../dinosaur.js');
+const Park = require('../javascript_park.js');
+
+beforeEach(function(){
+    dinosaur1 = new Dinosaur("Velociraptor", 10);
+    dinosaur2 = new Dinosaur("Brachiosaurus", 5);
+    dinosaur1 = new Dinosaur("T-Rex", 2);
+    park = new Park();
+  })
+
+  it('should start empty', function(){
+    assert.strictEqual(park.enclosure.length, 0);
+  });
