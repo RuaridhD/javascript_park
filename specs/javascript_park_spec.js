@@ -11,10 +11,15 @@ const Park = require('../javascript_park.js');
 beforeEach(function(){
     dinosaur1 = new Dinosaur("Velociraptor", 10);
     dinosaur2 = new Dinosaur("Brachiosaurus", 5);
-    dinosaur1 = new Dinosaur("T-Rex", 2);
+    dinosaur3 = new Dinosaur("T-Rex", 2);
     park = new Park();
   })
 
   it('should start empty', function(){
     assert.strictEqual(park.enclosure.length, 0);
+  });
+
+  it('should be able to add a dinosaur to enclosure', function(){
+    park.addToEnclosure(dinosaur1);
+    assert.strictEqual(park.enclosure.length, 1);
   });
