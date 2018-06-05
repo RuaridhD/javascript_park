@@ -13,6 +13,7 @@ beforeEach(function(){
     assert.strictEqual(dinosaur.type, "Velociraptor");
   });
 
+
   it('should have a number of offspring per year', function(){
     assert.strictEqual(dinosaur.offspringPerYear, 10);
   });
