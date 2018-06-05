@@ -10,8 +10,9 @@ const Park = require('../javascript_park.js');
 
 beforeEach(function(){
     dinosaur1 = new Dinosaur("Velociraptor", 10);
-    dinosaur2 = new Dinosaur("Brachiosaurus", 5);
-    dinosaur3 = new Dinosaur("T-Rex", 2);
+    dinosaur2 = new Dinosaur("Velociraptor", 9);
+    dinosaur3 = new Dinosaur("Brachiosaurus", 5);
+    dinosaur4 = new Dinosaur("T-Rex", 2);
     park = new Park();
   })
 
@@ -21,5 +22,13 @@ beforeEach(function(){
 
   it('should be able to add a dinosaur to enclosure', function(){
     park.addToEnclosure(dinosaur1);
+    assert.strictEqual(park.enclosure.length, 1);
+  });
+
+  it('should be able to remove all dinosaurs of a particular type', function(){
+    park.addToEnclosure(dinosaur1);
+    park.addToEnclosure(dinosaur2);
+    park.addToEnclosure(dinosaur3);
+    park.removeByType("Velociraptor");
     assert.strictEqual(park.enclosure.length, 1);
   });
