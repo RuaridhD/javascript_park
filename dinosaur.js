@@ -1,6 +1,6 @@
 const Dinosaur = function(type, offspringPerYear){
   this.type = type;
-  this.offspringPerYear = offspringPerYear
+  this.offspringPerYear = offspringPerYear;
 }
 
 module.exports = Dinosaur;

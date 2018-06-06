@@ -13,6 +13,7 @@ beforeEach(function(){
     dinosaur2 = new Dinosaur("Velociraptor", 9);
     dinosaur3 = new Dinosaur("Brachiosaurus", 5);
     dinosaur4 = new Dinosaur("T-Rex", 2);
+    dinosaur5 = new Dinosaur("Megalosaurus", 1);
     park = new Park();
   })
 
@@ -31,4 +32,13 @@ beforeEach(function(){
     park.addToEnclosure(dinosaur3);
     park.removeByType("Velociraptor");
     assert.strictEqual(park.enclosure.length, 1);
+  });
+
+  it('should get all the dinosaurs with an offspring count of more than 2', function(){
+    park.addToEnclosure(dinosaur1);
+    park.addToEnclosure(dinosaur2);
+    park.addToEnclosure(dinosaur3);
+    park.addToEnclosure(dinosaur4);
+    park.addToEnclosure(dinosaur5);
+    assert.strictEqual(park.checkIfMoreThanTwoOffspring(), 3);
   });
